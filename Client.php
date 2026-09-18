@@ -44,7 +44,7 @@ class Client implements ClientInterface
 
         try {
             $response = $client->post($this->getUrl($method), [
-                'verify' => false,
+                'verify' => true,
                 'multipart' => $multipartParams ?: null
             ]);
             $response = json_decode($response->getBody());
