@@ -4,12 +4,14 @@ namespace Zelenin\Telegram\Bot\Type;
 
 use stdClass;
 
+// Telegram may add fields beyond the historical typed wrappers.
+#[\AllowDynamicProperties]
 abstract class Type implements TypeInterface
 {
     /**
      * @param stdClass $result
      */
-    public function __construct(stdClass $result = null)
+    public function __construct(?stdClass $result = null)
     {
         if ($result instanceof stdClass) {
             $this->loadResult($result);
