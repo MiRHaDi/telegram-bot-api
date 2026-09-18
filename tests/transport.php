@@ -6,7 +6,7 @@ namespace GuzzleHttp {
         public static $lastUrl;
         public static $lastOptions;
 
-        public function post($url, $options)
+        public function request($method, $url, $options)
         {
             self::$lastUrl = $url;
             self::$lastOptions = $options;
